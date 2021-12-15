@@ -239,7 +239,7 @@ trait ValidatesInput
         $data = $this->unwrapDataForValidation($data);
 
         // If a matching rule is found, then filter collections down to keys specified in the field,
-        // while leaving all other data intact. If a key isn't specified and instead there is a 
+        // while leaving all other data intact. If a key isn't specified and instead there is a
         // wildcard '*' then leave that whole collection intact. This ensures that any rules
         // that depend on other fields/ properties still work.
         if ($ruleForField) {
@@ -299,7 +299,7 @@ trait ValidatesInput
                 }
             } else {
                 // Otherwise filter collection down to a specific key
-                $keyData = $data[$fieldKey];
+                $keyData = $data[$fieldKey] ?? null;
 
                 if ($ruleKey == '*') {
                     $data = [];
